@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './FirstHeader.css'
 import { TopLinks } from './TopLinks/TopLinks'
 
