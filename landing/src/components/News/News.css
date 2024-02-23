@@ -1,0 +1,123 @@
+@media (min-width: 375px) and (max-width: 1024px) {
+    .title{
+        color: rgb(89, 89, 89);
+        margin-left: 5%;
+        font-size: 500%;
+        float: left;
+    }
+    
+    .big-news{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        float: left;
+        margin-left: 5%;
+        width: 470%;
+        text-align: left;
+        margin-bottom: 40%;
+    }
+    
+    .image-news{
+        border-radius: 35px;
+        background-size: cover;
+    }
+    
+    .date-news{
+        font-size: 50px;
+        font-weight: lighter;
+        color: rgb(121, 121, 121);
+    }
+    
+    .title-news{
+        font-size: 60px;
+        margin-bottom: 40px;
+        color: rgb(89, 89, 89);
+    }
+
+    .text-news{
+        font-size: 50px;
+        font-weight: lighter;
+        color: rgb(121, 121, 121);
+    }
+    
+    .link-news{
+        font-size: 50px;
+        color: rgb(233, 0, 0);
+        font-weight: bold;
+        transition: .4s;
+        text-decoration: underline;
+    }
+    
+    .link-news:hover{
+        color: rgb(155, 0, 0);
+    }
+
+}
+
+
+
+
+@media (min-width: 1025px) {
+    .title{
+        color: rgb(89, 89, 89);
+        margin-left: 4%;
+        font-size: 100px;
+        float: left;
+    }
+    
+    .big-news{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        float: left;
+        width: 400%;
+        margin-left: 5%;
+        text-align: left;
+        margin-bottom: 5%;
+    }
+
+    .news-cards{
+        display: flex;
+        flex-direction: row;
+        width: 437%;
+        margin-left: -18%;
+    }
+    
+    .image-news{
+        border-radius: 35px;
+        background-size: cover;
+    }
+    
+    .date-news{
+        font-size: 63px;
+        font-weight: lighter;
+        color: rgb(121, 121, 121);
+        margin-top: 4%;
+        margin-bottom: 1%;
+    }
+    
+    .title-news{
+        font-size: 65px;
+        margin-bottom: 5%;
+        color: rgb(89, 89, 89);
+    }
+
+    .text-news{
+        font-size: 63px;
+        font-weight: lighter;
+        color: rgb(121, 121, 121);
+        margin-bottom: 5%;
+    }
+    
+    .link-news{
+        font-size: 63px;
+        color: rgb(233, 0, 0);
+        font-weight: bold;
+        transition: .4s;
+        text-decoration: underline;
+    }
+    
+    .link-news:hover{
+        color: rgb(155, 0, 0);
+    }
+}

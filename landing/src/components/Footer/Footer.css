@@ -1,0 +1,87 @@
+@media (min-width: 375px) and (max-width: 1024px) {
+    .footerr{
+        background-color: rgb(231, 0, 0);
+        margin-bottom: -16200px;
+        margin-left: -40px;
+        height: 600px;
+        width: 1501px;
+        position:absolute;
+        bottom: 0;
+    }
+    
+    .footer-logo{
+        width: 55%;
+        align-items: center;
+        margin-bottom: 2%;
+        margin-top: 5%;
+    }
+    
+    .social{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: 25%;
+    }
+
+    .face{
+        width: 15%;
+    }
+    
+    .insta{
+        width: 15%;
+    }
+    
+    .ex{
+        width: 15%;
+    }
+    
+    .youtube{
+        width: 15%;
+    }
+}
+
+
+@media (min-width: 1025px) {
+        
+    .footerr{
+        background-color: rgb(231, 0, 0);
+        margin-bottom: -16500px;
+        margin-left: -40px;
+        height: 480px;
+        width: 400%;
+        display:block;
+        position:absolute;
+        bottom: 0;
+    }
+
+    .footer-logo{
+        margin-top: 2%;
+        width: 22%;
+        float: left;
+    }
+
+    .social{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: 2%;
+        margin-top: 4.5%;
+    }
+
+    .face{
+        width: 4%;
+        margin-left: 62%;
+    }
+
+    .insta{
+        width: 4%;
+    }
+
+    .ex{
+        width: 4%;
+    }
+
+    .youtube{
+        width: 4%;
+    }
+}

@@ -1,0 +1,102 @@
+@media (min-width: 375px) and (max-width: 1024px) {
+    .featured{
+        margin-left: 6%;
+        color: hsl(0, 0%, 30%);
+        font-size: 500%;
+    }
+
+    .allcards{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        gap: 5%;
+        float: left;
+        margin-left: 5%;
+        margin-top: 2%;
+        overflow-x: scroll;
+        margin-bottom: 50%;
+        width: 480%;
+    }
+
+    .f-cards{
+        border: 1px solid rgb(106, 106, 106);
+        border-radius: 35px;
+        flex: 0 0 58%;
+        height: 950px;
+    }
+    
+    .image-card{
+        border-radius: 35px 35px 0px 0px;
+        width: 100%;
+    }
+    
+    .f-title{
+        font-size: 45px;
+        color: rgb(89, 89, 89);
+        text-align: left;
+        padding: 35px;
+    }
+    
+    .f-text{
+        font-size: 40px;
+        color: rgb(128, 128, 128);
+        float: inline-start;
+        padding: 35px;
+    }
+    
+}
+
+
+
+
+@media (min-width: 1025px){
+    .featured{
+        float: left;
+        margin-left: 5%;
+        color: rgb(77, 77, 77);
+        font-size: 100px;
+        margin-top: 50%;
+    }
+
+    .allcards{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        gap: 3%;
+        float: left;
+        margin-left: 5%;
+        margin-top: 2%;
+        overflow-x: scroll;
+        margin-bottom: 45%;
+        width: 420%;
+    }
+
+    .f-cards{
+        border: 1px solid rgb(106, 106, 106);
+        border-radius: 50px;
+        flex: 0 0 27%;
+        height: 1300px;
+    }
+    
+    .image-card{
+        border-radius: 50px 50px 0px 0px;
+        width: 100%;
+    }
+    
+    .f-title{
+        font-size: 60px;
+        color: rgb(89, 89, 89);
+        text-align: left;
+        padding-left: 50px;
+        padding-top: 3%;
+    }
+    
+    .f-text{
+        font-size: 55px;
+        color: rgb(128, 128, 128);
+        float: inline-start;
+        padding-left: 50px;
+        padding-top: 15%;
+    }
+    
+}

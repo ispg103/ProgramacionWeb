@@ -1,0 +1,126 @@
+@media (min-width: 375px) and (max-width: 1024px) {
+.main1{
+    float: left;
+}
+
+.main2{
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.big-img{
+    display: none;
+}
+
+
+.big-img-cell{
+    width: 510%;
+    margin-top: 48%;
+    margin-left: -15%;
+}
+
+.main1 h1{
+    margin-top: 45%;
+    margin-left: 11%;
+    color: rgb(76, 76, 76);
+    font-size: 445%;
+    width: 415%;
+}
+
+.main1 button{
+    background-color: rgb(233, 0, 0);
+    font-weight: bold;
+    font-size: 370%;
+    color: white;
+    height: 200px;
+    width: 430%;
+    border-radius: 35px;
+    border: none;
+    margin-left: 8%;
+    margin-top:30%;
+    margin-bottom: 60%;
+    transition: transform .4s;
+}
+
+.main1 button:hover{
+    transform: scale(1.1);
+}
+
+.main2 .pg {
+    display: none;
+}
+
+.main2 p{
+    display: none;
+}
+}
+
+
+
+
+@media (min-width: 1025px) {
+.main1{
+    display:block;
+    float: left;
+}
+
+.main2{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    width: 100%;
+    margin-left: 345%;
+}
+
+.big-img{
+    width: 424%;
+    margin-top: 40%;
+    padding: 10px;
+    border-radius: 120px;
+}
+
+.big-img-cell{
+    display:none;
+}
+
+.main1 h1{
+    padding-left: 5%;
+    color: rgb(76, 76, 76);
+    font-size: 100px;
+    width: 250%;
+    text-align: left;
+}
+
+.main1 button{
+    display:block;
+    background-color: rgb(233, 0, 0);
+    font-weight: bold;
+    font-size: 65px;
+    color: white;
+    padding: 5.5%;
+    width: 65%;
+    border-radius: 45px;
+    border: none;
+    margin-left: 263%;
+    transition: transform .4s;
+    margin-top:-300px;
+}
+
+.main1 button:hover{
+    transform: scale(1.1);
+}
+
+.main2 .pg {
+    display: block;
+    margin-top: -250px;
+    width: 190px;
+    margin-right: 10px;
+}
+
+.main2 p{
+    display: block;
+    margin-top: -200px;
+    font-size: 45px;
+    color: rgb(103, 103, 103);
+}
+}

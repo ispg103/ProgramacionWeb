@@ -1,0 +1,10 @@
+:root {
+  font-family: Verdana;
+  color: rgb(96, 96, 96);
+}
+
+#app {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}

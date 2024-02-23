@@ -1,0 +1,56 @@
+@media (min-width: 375px) and (max-width: 1024px){
+.help-bar{
+    display: flex;
+    position: fixed;
+    bottom: 2%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 3%;
+    width: 89%;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 20px;
+    border-radius: 150px;
+}
+
+.hamburguer{
+    margin-left: 50px;
+    width: 8%;
+}
+
+.wish-icon{
+    width: 10%;
+}
+
+.search-white{
+    background-color: rgb(231, 0, 0);
+    border-radius: 200px;
+    display: flex;
+    position: relative;
+    width: 12%;
+    height: 140px;
+    padding: 40px;
+    margin-top: -6%;
+}
+
+.search-icon{
+    margin-left: 9%;
+    margin-top: 3%;
+    width: 80%;
+    height: 90%;
+}
+
+.cart-icon{
+    width: 8%;
+}
+
+.profile-icon{
+    width: 9%;
+    margin-right: 50px;
+}
+}
+
+@media (min-width: 1025px){
+    .help-bar{
+        display: none;
+    }
+}

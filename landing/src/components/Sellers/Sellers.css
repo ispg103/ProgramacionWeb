@@ -1,0 +1,150 @@
+@media (min-width: 375px) and (max-width: 1024px) {
+    .sell-bigtitle{
+        margin-top: 200%;
+        margin-left: 3%;
+        color: rgb(76, 76, 76);
+        font-size: 70px;
+        width: 250%;
+    }
+
+    .all-sell-card{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        gap: 5%;
+        float: left;
+        margin-left: 5%;
+        margin-top: 2%;
+        overflow-x: scroll;
+        margin-bottom: 50%;
+        width: 480%;
+    }
+    
+    .sell-cards{
+        border: 1px solid rgb(106, 106, 106);
+        border-radius: 35px;
+        flex: 0 0 58%;
+        height: 1030px;
+    }
+    
+    .sell-image{
+        border-radius: 35px 35px 0px 0px;
+        width: 100%;
+    }
+    
+    .sell-title{
+        font-size: 47px;
+        color: rgb(89, 89, 89);
+        text-align: left;
+        padding: 35px;
+        margin-top: 3%;
+    }
+
+    .sell-date{
+        font-size: 40px;
+        color: rgb(128, 128, 128);
+        padding: 35px;
+        margin-top: -11%;
+        float: left;
+    }
+
+    .sell-price{
+        font-size: 47px;
+        color: rgb(89, 89, 89);
+        text-align: left;
+        padding: 35px;
+        margin-top: 15%;
+    }
+    
+    .sell-text{
+        font-size: 40px;
+        color: rgb(128, 128, 128);
+        float: inline-start;
+        padding: 35px;
+        margin-top: -9%;
+    }
+    
+    .sell-heart{
+        width: 19%;
+        height: 15%;
+        margin-left: 72%;
+        margin-top: -170px;
+    }
+}
+
+
+
+
+@media (min-width: 1025px) {
+    .sell-bigtitle{
+        margin-top: 200%;
+        margin-left: 3%;
+        color: rgb(76, 76, 76);
+        font-size: 100px;
+        width: 115%;
+    }
+
+    .all-sell-card{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        gap: 3%;
+        float: left;
+        margin-left: 5%;
+        margin-top: 2%;
+        overflow-x: scroll;
+        margin-bottom: 45%;
+        width: 420%;
+    }
+    
+    .sell-cards{
+        border: 1px solid rgb(106, 106, 106);
+        border-radius: 50px;
+        flex: 0 0 27%;
+        height: 1400px;
+    }
+    
+    .sell-image{
+        border-radius: 50px 50px 0px 0px;
+        width: 100%;
+    }
+    
+    .sell-title{
+        font-size: 60px;
+        color: rgb(89, 89, 89);
+        text-align: left;
+        padding-left: 50px;
+        padding-top: 3%;
+    }
+
+    .sell-date{
+        font-size: 55px;
+        color: rgb(128, 128, 128);
+        padding: 65px;
+        margin-top: -8%;
+        float: left;
+    }
+
+    .sell-price{
+        font-size: 60px;
+        color: rgb(89, 89, 89);
+        text-align: left;
+        padding: 55px;
+        margin-top: 20%;
+    }
+    
+    .sell-text{
+        font-size: 55px;
+        color: rgb(128, 128, 128);
+        float: inline-start;
+        padding: 55px;
+        margin-top: -11%;
+    }
+    
+    .sell-heart{
+        width: 19%;
+        height: 14%;
+        margin-left: 72%;
+        margin-top: -180px;
+    }
+}

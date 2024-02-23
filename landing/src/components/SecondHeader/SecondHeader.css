@@ -1,0 +1,82 @@
+@media (min-width: 375px) and (max-width: 1024px) {
+.second-bar{
+    display: none;
+}
+}
+
+@media (min-width: 1025px) {
+.second-bar{
+    display: flex;
+    position: fixed;
+    background: #ffffff;
+	height: 200px;
+    top: 200px;
+    left: 0;
+    border: 1px solid rgb(210, 210, 210);
+    padding-right: 6%;
+    padding-left: 7.5%;
+}
+
+.bottom-link{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    margin-top: 3%;
+    width: fit-content;
+}
+
+.icon-bottom{
+    width: 11%;
+    height: 35%;
+}
+
+.title-bottom{
+    color: rgb(35, 35, 35);
+    font-size: 55px;
+}
+
+.games{
+    margin-left: 2%;
+}
+
+.switch{
+    margin-left: -1%;
+}
+
+.news{
+    margin-left: 5%;
+}
+
+.store .two{
+    width: 1.5%;
+    display: flex;
+    position: fixed;
+    left: 25.2%;
+    top: 7.9%;
+}
+
+.games .three{
+    width: 1.5%;
+    display: flex;
+    position: fixed;
+    left: 36.5%;
+    top: 7.8%;
+}
+
+
+.switch .four{
+    width: 1.5%;
+    display: flex;
+    position: fixed;
+    left: 56%;
+    top: 7.8%;
+}
+
+.nintendo .five {
+    width: 1.5%;
+    display: flex;
+    position: fixed;
+    left: 91%;
+    top: 7.9%;
+}
+}

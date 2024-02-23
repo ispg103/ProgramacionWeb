@@ -1,0 +1,111 @@
+@media (min-width: 375px) and (max-width: 1024px) {
+    .online-store-pc{
+        display:none;
+    }
+
+
+    .big-cards{
+        margin-bottom: 70%;
+    }
+
+    .title-big{
+        margin-right: 995px;
+        color: rgb(76, 76, 76);
+        font-size: 500%;
+        width: 500px;
+    }
+    
+    .online-img{
+        display: none;
+    }
+    
+    .b-image-card{
+        margin-left: 15px;
+        margin-bottom: 110px;
+        width: 470%;
+        border-radius: 35px;
+        float: left;
+    }
+    
+    .text-big{
+        width: 500%;
+        text-align: left;
+        margin-left: 15px;
+        font-size: 60px;
+    }
+    
+    .button-big{
+        background-color: rgb(233, 0, 0);
+        font-weight: bold;
+        font-size: 65px;
+        color: white;
+        height: 200px;
+        width: 470%;
+        border-radius: 30px;
+        border: none;
+        margin-top: 70px;
+        margin-left: 20px;
+        transition: transform .4s;
+    }
+    
+    .button-big:hover{
+        transform: scale(1.1);
+    }
+}
+
+
+
+
+
+@media (min-width: 1025px) {
+    .online-store{
+        display: none;
+    }
+
+    .big-cards{
+        margin-bottom: 70%;
+    }
+
+    .title-big{
+        margin-left: 4%;
+        color: rgb(76, 76, 76);
+        font-size: 100px;
+        width: max-content;
+    }
+    
+    .b-image-card{
+        margin-left: 4%;
+        margin-bottom: 15%;
+        width: 415%;
+        border-radius: 70px;
+        float: left;
+    }
+    
+    .text-big{
+        width: 300%;
+        text-align: left;
+        margin-left: 4%;
+        font-size: 80px;
+    }
+    
+    .button-big{
+        display: block;
+        background-color: rgb(233, 0, 0);
+        font-weight: bold;
+        font-size: 65px;
+        color: white;
+        height: 200px;
+        width: 70%;
+        border-radius: 40px;
+        border: none;
+        margin-top: -210px;
+        margin-left: 330%;
+        transition: transform .4s;
+    }
+    
+    .button-big:hover{
+        transform: scale(1.1);
+    }
+
+
+}
