@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './HelpBar.css'
 import { LINKS } from '../../const/links'
 
-// TODO finish burger menu
+// TODO finish burger menu css
 
 export function HelpBar () {
   const [showMenu, setShowMenu] = useState(false)
@@ -16,11 +16,6 @@ export function HelpBar () {
   return (
     <>
       <nav className='help-bar'>
-
-        <Menu
-          items={LINKS}
-          showMenu={showMenu}
-        />
 
         <button onClick={handleShowMenu} className='burguer-menu'>
           <img src='https://cdn-icons-png.flaticon.com/512/8979/8979038.png' className='hamburguer' />
@@ -37,6 +32,13 @@ export function HelpBar () {
         <img src='https://cdn-icons-png.flaticon.com/512/3106/3106921.png' className='profile-icon' />
 
       </nav>
+
+      <header>
+        <Menu
+          items={LINKS}
+          showMenu={showMenu}
+        />
+      </header>
 
     </>
   )

@@ -1,14 +1,22 @@
 export const LINKS = [
   {
     id: crypto.randomUUID(),
-    text: 'Link 1'
+    text: 'My Nintendo Store'
   },
   {
     id: crypto.randomUUID(),
-    text: 'Link 2'
+    text: 'Games'
   },
   {
     id: crypto.randomUUID(),
-    text: 'Link 3'
+    text: 'Nintendo Switch'
+  },
+  {
+    id: crypto.randomUUID(),
+    text: 'News & Events'
+  },
+  {
+    id: crypto.randomUUID(),
+    text: 'Play Nintendo'
   }
 ]
