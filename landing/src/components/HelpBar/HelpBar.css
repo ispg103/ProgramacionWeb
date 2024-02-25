@@ -115,4 +115,8 @@ header nav ul li .arrow{
     .help-bar{
         display: none;
     }
+
+    header nav{
+        display: none;
+    }
 }
