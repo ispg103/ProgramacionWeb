@@ -1,3 +1,4 @@
+import './Button.css'
 import PropTypes from 'prop-types'
 
 export function Button ({ type, text, handleClickCounter }) {
@@ -5,7 +6,7 @@ export function Button ({ type, text, handleClickCounter }) {
     handleClickCounter(type)
   }
   return (
-    <button onClick={handleClick} type={type} id={`button${type}`} className='button'>{text}</button>
+    <button onClick={handleClick} type={type} className='button'>{text}</button>
   )
 }
 

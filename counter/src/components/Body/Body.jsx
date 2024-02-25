@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { Button } from '../Button/Button'
+import './Body.css'
 
-export function Main () {
+export function Body () {
   const [counter, setCounter] = useState(0)
 
   const handleClickCounter = (valor) => {
-    if (valor === 'increase') {
+    if (valor === 'add') {
       setCounter(counter + 1)
-    } else if (counter !== 0 && valor === 'decrease') {
+    } else if (counter !== 0 && valor === 'subtract') {
       setCounter(counter - 1)
     } else if (valor === 'reset') {
       setCounter(0)
@@ -15,15 +16,15 @@ export function Main () {
   }
   return (
     <>
-      <section className='buttons'>
+      <section className='add-subtract'>
         <Button
-          type='decrease'
+          type='subtract'
           text='-'
           handleClickCounter={handleClickCounter}
         />
         <h1>{counter} </h1>
         <Button
-          type='increase'
+          type='add'
           text='+'
           handleClickCounter={handleClickCounter}
         />
