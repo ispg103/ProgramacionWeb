@@ -2,8 +2,6 @@ import { useState } from 'react'
 import './HelpBar.css'
 import { LINKS } from '../../const/links'
 
-// TODO finish burger menu css
-
 export function HelpBar () {
   const [showMenu, setShowMenu] = useState(false)
 
@@ -61,10 +59,12 @@ function Menu ({ items, showMenu }) {
 }
 
 function MenuItem ({ item }) {
-  const { text } = item
+  const { image, text, arrow } = item
   return (
     <li>
+      <img src={image} className='images' />
       <a href=''>{text}</a>
+      <img src={arrow} className='arrow' />
     </li>
   )
 }

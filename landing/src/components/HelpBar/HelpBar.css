@@ -8,7 +8,7 @@
     background-color: white;
     padding: 3%;
     width: 89%;
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 20px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 30px;
     border-radius: 150px;
     z-index: 1;
 }
@@ -22,6 +22,7 @@ header nav{
     height: 58%;
     background-color: white;
     border-radius: 35px 35px 0 0;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 20px;
 }
 
 header nav.hidden{
@@ -31,20 +32,40 @@ header nav.hidden{
 header nav ul{
     display: flex;
     position: fixed;
-    font-size: 50px;
-    color: white;
+    font-size: 56px;
     list-style: none;
     padding: 0;
-    width: 81%;
-    margin: 0 auto;
-    display: flex;
-    margin-top: 140px;
+    margin-top: 180px;
+    margin-left: 150px;
     flex-direction: column;
-    gap: 2rem;
-    font-weight: bold;
-    text-align: center;
+    gap: 160px;
+    text-align: left;
 }
 
+header nav ul li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 85%;
+    position: relative;
+}
+
+header nav ul li a{
+    color: rgb(77, 77, 77);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header nav ul li .images{
+    width: 6%;
+    margin-right: 5%;
+}
+
+header nav ul li .arrow{
+    width: 3%;
+    margin-top: 7px;
+    margin-left: 2%;
+}
 
 
 .burguer-menu{
