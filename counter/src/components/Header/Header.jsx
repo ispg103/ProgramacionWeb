@@ -1,7 +1,7 @@
 export function Header () {
   return (
     <>
-      <h1>Counter App</h1>
+      <h1>Planet Counter App</h1>
     </>
   )
 }

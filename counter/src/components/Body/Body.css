@@ -4,4 +4,16 @@
     justify-content: center;
     align-items: center;
     gap: 10%;
-  }
+}
+
+.planet-images {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.planet-images img {
+  width: 15%;
+  height: 50%;
+  margin: 5px;
+}

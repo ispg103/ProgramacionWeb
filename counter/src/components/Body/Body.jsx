@@ -1,19 +1,31 @@
 import { useState } from 'react'
 import { Button } from '../Button/Button'
+import { planetImages } from '../../const/links'
 import './Body.css'
 
 export function Body () {
   const [counter, setCounter] = useState(0)
+  const [planetCount, setPlanetCount] = useState(0)
 
-  const handleClickCounter = (valor) => {
-    if (valor === 'add') {
+  const handleClickCounter = (value) => {
+    if (value === 'add') {
       setCounter(counter + 1)
-    } else if (counter !== 0 && valor === 'subtract') {
+      setPlanetCount(Math.min(planetImages.length, planetCount + 1))
+    } else if (counter !== 0 && value === 'subtract') {
       setCounter(counter - 1)
-    } else if (valor === 'reset') {
+      setPlanetCount(Math.max(0, planetCount - 1))
+    } else if (value === 'reset') {
       setCounter(0)
+      setPlanetCount(0)
     }
   }
+
+  const renderPlanetImages = () => {
+    return [...Array(planetCount)].map((_, index) => (
+      <img key={index} src={planetImages[index]} alt={`Planet ${index + 1}`} />
+    ))
+  }
+
   return (
     <>
       <section className='add-subtract'>
@@ -35,6 +47,10 @@ export function Body () {
         text='reset'
         handleClickCounter={handleClickCounter}
       />
+
+      <div className='planet-images'>
+        {renderPlanetImages()}
+      </div>
     </>
 
   )
