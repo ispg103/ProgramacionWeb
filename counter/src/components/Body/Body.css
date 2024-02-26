@@ -10,6 +10,8 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 7%;
+  margin-bottom: 5%;
 }
 
 .planet-images img {
