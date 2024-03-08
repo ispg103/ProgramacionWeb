@@ -1,16 +1,19 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-export function Button ({ type, text, handleClickCounter }) {
+export default function Button({ type, text, handleClickCounter }) {
   const handleClick = () => {
-    handleClickCounter(type)
-  }
+    handleClickCounter(type);
+  };
+
   return (
-    <button onClick={handleClick} type={type} className='button'>{text}</button>
-  )
+    <button onClick={handleClick} type={type} className='button'>
+      {text}
+    </button>
+  );
 }
 
 Button.propTypes = {
   type: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  handleClickCounter: PropTypes.func.isRequired
-}
+  handleClickCounter: PropTypes.func.isRequired,
+};
