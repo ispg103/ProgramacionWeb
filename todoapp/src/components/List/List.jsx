@@ -1,16 +1,24 @@
+import { useState } from 'react';
 import Button from '../Button/Button';
-import Form from '../Form/Form'; 
+import Form from '../Form/Form';
 import useInput from '../../hooks/useInput';
 import useTasks from '../../hooks/useTasks';
 
 export default function TodoList() {
   const [inputValue, setInputValue, setInput] = useInput('');
   const { tasks, addTask, deleteTask, clearAllTasks, toggleTaskCompletion } = useTasks([]);
+  const [filter, setFilter] = useState('all'); // Estado del filtro
 
   const handleAddTask = () => {
     addTask(inputValue);
     setInput('');
   };
+
+  // Filtrar las tareas según el estado del filtro
+  const filteredTasks = filter === 'all' ? tasks :
+    filter === 'completed' ? tasks.filter(task => task.completed) :
+    filter === 'pending' ? tasks.filter(task => !task.completed) :
+    [];
 
   return (
     <div>
@@ -19,8 +27,16 @@ export default function TodoList() {
         handleChange={setInputValue}
         handleAddTask={handleAddTask}
       />
+      <div>
+        <label htmlFor="filter">Filter: </label>
+        <select id="filter" value={filter} onChange={(e) => setFilter(e.target.value)}>
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
       <ul>
-        {tasks.map((task, index) => (
+        {filteredTasks.map((task, index) => (
           <li key={index}>
             <input
               type="checkbox"
