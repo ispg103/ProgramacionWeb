@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from '../Button/Button';
 import Form from '../Form/Form';
+import Footer from '../Footer/Footer';
 import useInput from '../../hooks/useInput';
 import useTasks from '../../hooks/useTasks';
 
@@ -12,6 +13,10 @@ export default function TodoList() {
   const handleAddTask = () => {
     addTask(inputValue);
     setInput('');
+  };
+
+  const handleClearAllTasks = () => {
+    clearAllTasks();
   };
 
   // Filtrar las tareas según el estado del filtro
@@ -50,10 +55,7 @@ export default function TodoList() {
           </li>
         ))}
       </ul>
-      <Button type="button" text="Clear All" handleClickCounter={clearAllTasks} />
-      <div>
-        <span>Tasks pending: {tasks.filter((task) => !task.completed).length}</span>
-      </div>
+      <Footer tasks={tasks} clearAllTasks={handleClearAllTasks} />
     </div>
   );
 }
