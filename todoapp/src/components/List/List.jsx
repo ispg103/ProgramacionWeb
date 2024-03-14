@@ -32,7 +32,7 @@ export default function TodoList() {
           handleChange={setInputValue}
           handleAddTask={handleAddTask}
         />
-        <Filter // Usamos el componente Filter
+        <Filter
           options={[
             { value: 'all', label: 'All' },
             { value: 'completed', label: 'Completed' },

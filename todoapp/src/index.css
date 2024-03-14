@@ -66,6 +66,7 @@ section{
   display: flex;
   gap: 30px;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .footer{
@@ -78,7 +79,28 @@ section{
 .filter{
   display: flex;
   align-items: center;
-  width: 10rem;
+  width: 30rem;
+  gap: 2rem;
+}
+
+.filter div{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #ffffff;
 }
 
 

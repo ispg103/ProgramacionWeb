@@ -18,7 +18,7 @@ function Filter({ options, activeFilter, setActiveFilter }) {
             checked={activeFilter === option.value}
             onChange={() => handleFilterChange(option.value)}
           />
-          <label htmlFor={option.value}>{option.label}</label>
+          <label name={option.value}>{option.label}</label>
         </div>
       ))}
     </div>
