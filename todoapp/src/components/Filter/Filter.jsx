@@ -7,7 +7,6 @@ function Filter({ options, activeFilter, setActiveFilter }) {
 
   return (
     <div className='filter'>
-      <label>Filter: </label>
       {options.map((option) => (
         <div key={option.value}>
           <input

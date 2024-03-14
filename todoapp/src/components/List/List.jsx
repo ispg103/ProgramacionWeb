@@ -26,7 +26,7 @@ export default function TodoList() {
 
   return (
     <>
-      <div>
+      <div className='body'>
         <Form
           inputValue={inputValue}
           handleChange={setInputValue}
