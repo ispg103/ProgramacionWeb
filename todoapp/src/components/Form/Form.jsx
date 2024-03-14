@@ -14,7 +14,7 @@ function Form({ inputValue, handleChange, handleAddTask }) {
         <form className="TodoForm">
           <input
             type="text"
-            className="Todo-input"
+            className="todo-input"
             placeholder="Enter your task"
             value={inputValue}
             onChange={handleChange}

@@ -5,9 +5,9 @@ function Footer({ tasks, clearAllTasks }) {
   const tasksPending = tasks.filter(task => !task.completed).length;
 
   return (
-    <div>
+    <div className='footer'>
       <span>Tasks pending: {tasksPending}</span>
-      <Button type="button" text="Clear All" handleClickCounter={clearAllTasks} /> {/* Botón Clear All */}
+      <Button type="button" text="Clear All" handleClickCounter={clearAllTasks} />
     </div>
   );
 }
