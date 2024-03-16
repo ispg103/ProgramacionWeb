@@ -1,65 +1,51 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import Form from '../Form/Form';
-import Footer from '../Footer/Footer';
 import useInput from '../../hooks/useInput';
 import useTasks from '../../hooks/useTasks';
-import Filter from '../Filter/Filter';
 
-export default function TodoList() {
+export default function TodoList({ filter }) {
   const [inputValue, setInputValue, setInput] = useInput('');
   const { tasks, addTask, deleteTask, clearAllTasks, toggleTaskCompletion } = useTasks([]);
-  const [activeFilter, setActiveFilter] = useState('all');
 
   const handleAddTask = () => {
     addTask(inputValue);
     setInput('');
   };
 
-  const handleClearAllTasks = () => {
-    clearAllTasks();
-  };
-
-  const handleFilterChange = (filter) => {
-    setActiveFilter(filter);
-  };
-
   return (
-    <>
-      <div className='body'>
-        <Form
-          inputValue={inputValue}
-          handleChange={setInputValue}
-          handleAddTask={handleAddTask}
-        />
-        <Filter
-          options={[
-            { value: 'all', label: 'All' },
-            { value: 'completed', label: 'Completed' },
-            { value: 'pending', label: 'Pending' },
-          ]}
-          activeFilter={activeFilter}
-          setActiveFilter={handleFilterChange}
-        />
-        <ul>
-          {tasks
-            .filter(task => activeFilter === 'all' || (activeFilter === 'completed' && task.completed) || (activeFilter === 'pending' && !task.completed))
-            .map((task, index) => (
-              <li key={index}>
-                <input
-                  type="checkbox"
-                  checked={task.completed}
-                  onChange={() => toggleTaskCompletion(index)}
-                />
-                <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
-                  {task.text}
-                </span>
-                <Button type="button" text="Delete" handleClickCounter={() => deleteTask(index)} />
-              </li>
-            ))}
-        </ul>
+    <div>
+      <Form
+        inputValue={inputValue}
+        handleChange={setInputValue}
+        handleAddTask={handleAddTask}
+      />
+      <ul>
+        {tasks
+          .filter(task => filter === 'all' || (filter === 'completed' && task.completed) || (filter === 'pending' && !task.completed))
+          .map((task, index) => (
+            <li key={index}>
+              <input
+                type="checkbox"
+                checked={task.completed}
+                onChange={() => toggleTaskCompletion(index)}
+              />
+              <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+                {task.text}
+              </span>
+              <Button type="button" text="Delete" handleClickCounter={() => deleteTask(index)} />
+            </li>
+          ))}
+      </ul>
+      <Button type="button" text="Clear All" handleClickCounter={clearAllTasks} />
+      <div>
+        <span>Tasks pending: {tasks.filter((task) => !task.completed).length}</span>
       </div>
-      <Footer tasks={tasks} clearAllTasks={handleClearAllTasks} />
-    </>
+    </div>
   );
 }
+
+// Define PropTypes para el prop filter
+TodoList.propTypes = {
+  filter: PropTypes.string.isRequired,
+};

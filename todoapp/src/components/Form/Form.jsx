@@ -3,11 +3,14 @@ import Button from '../Button/Button';
 
 function Form({ inputValue, handleChange, handleAddTask }) {
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && inputValue.trim() !== '') {
       event.preventDefault();
       handleAddTask();
     }
   };
+
+  const isInputEmpty = inputValue.trim() === '';
+
   return (
     <>
       <section>
@@ -21,7 +24,12 @@ function Form({ inputValue, handleChange, handleAddTask }) {
             onKeyPress={handleKeyPress}
           />
         </form>
-        <Button type="button" text="Add Task" handleClickCounter={handleAddTask} />
+        <Button
+          type="button"
+          text="Add Task"
+          handleClickCounter={handleAddTask}
+          disabled={isInputEmpty}
+        />
       </section>
     </>
   );

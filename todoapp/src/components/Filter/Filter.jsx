@@ -1,36 +1,21 @@
 import PropTypes from 'prop-types';
 
-function Filter({ options, activeFilter, setActiveFilter }) {
-  const handleFilterChange = (filter) => {
-    setActiveFilter(filter);
-  };
-
+function Filter({ filter, setFilter }) {
   return (
-    <div className='filter'>
-      {options.map((option) => (
-        <div key={option.value}>
-          <input
-            type="checkbox"
-            id={option.value}
-            name="filter"
-            value={option.value}
-            checked={activeFilter === option.value}
-            onChange={() => handleFilterChange(option.value)}
-          />
-          <label name={option.value}>{option.label}</label>
-        </div>
-      ))}
+    <div>
+      <label htmlFor="filter">Filter: </label>
+      <select id="filter" value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
     </div>
   );
 }
 
 Filter.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
-  })).isRequired,
-  activeFilter: PropTypes.string.isRequired,
-  setActiveFilter: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
+  setFilter: PropTypes.func.isRequired,
 };
 
 export default Filter;
