@@ -55,6 +55,7 @@ ul {
   list-style: none;
   display: flex;
   flex-direction: column;
+  padding-left: 10rem;
 }
 
 li{
@@ -71,28 +72,28 @@ section{
   gap: 30px;
   align-items: center;
   margin-bottom: 1rem;
+  padding-left: 8.7rem;
 }
 
 .footer{
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding-left: 15rem;
+  padding-left: 12rem;
 }
 
 .filter{
   display: flex;
   align-items: center;
   width: 30rem;
-  gap: 2rem;
   margin-bottom: 1rem;
-  padding-left: 3.1rem;
+  padding-left: 12.5rem;
 }
 
 .filter div{
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 2rem;
 }
 
 input[type="checkbox"] {

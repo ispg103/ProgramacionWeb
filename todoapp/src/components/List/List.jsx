@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 import Form from '../Form/Form';
+import Footer from '../Footer/Footer';
 import useInput from '../../hooks/useInput';
 import useTasks from '../../hooks/useTasks';
 
@@ -13,6 +14,16 @@ export default function TodoList({ filter }) {
     setInput('');
   };
 
+  const handleClearAllTasks = () => {
+    clearAllTasks();
+  };
+
+  const hasTasks = tasks.length > 0;
+
+  function NoTasksMsg() {
+    return <p>Sorry, there are not any tasks. But you can add some...</p>;
+  }
+
   return (
     <div>
       <Form
@@ -20,32 +31,34 @@ export default function TodoList({ filter }) {
         handleChange={setInputValue}
         handleAddTask={handleAddTask}
       />
-      <ul>
-        {tasks
-          .filter(task => filter === 'all' || (filter === 'completed' && task.completed) || (filter === 'pending' && !task.completed))
-          .map((task, index) => (
-            <li key={index}>
-              <input
-                type="checkbox"
-                checked={task.completed}
-                onChange={() => toggleTaskCompletion(index)}
-              />
-              <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
-                {task.text}
-              </span>
-              <Button type="button" text="Delete" handleClickCounter={() => deleteTask(index)} />
-            </li>
-          ))}
-      </ul>
-      <Button type="button" text="Clear All" handleClickCounter={clearAllTasks} />
+      {hasTasks ? (
+        <ul>
+          {tasks
+            .filter(task => filter === 'all' || (filter === 'completed' && task.completed) || (filter === 'pending' && !task.completed))
+            .map((task, index) => (
+              <li key={index}>
+                <input
+                  type="checkbox"
+                  checked={task.completed}
+                  onChange={() => toggleTaskCompletion(index)}
+                />
+                <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+                  {task.text}
+                </span>
+                <Button type="button" text="Delete" handleClickCounter={() => deleteTask(index)} />
+              </li>
+            ))}
+        </ul>
+      ) : (
+        <NoTasksMsg />
+      )}
       <div>
-        <span>Tasks pending: {tasks.filter((task) => !task.completed).length}</span>
+        <Footer tasks={tasks} clearAllTasks={handleClearAllTasks} />
       </div>
     </div>
   );
 }
 
-// Define PropTypes para el prop filter
 TodoList.propTypes = {
   filter: PropTypes.string.isRequired,
 };

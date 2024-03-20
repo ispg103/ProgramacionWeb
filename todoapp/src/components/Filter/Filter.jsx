@@ -1,14 +1,49 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 function Filter({ filter, setFilter }) {
+  const [selectedFilter, setSelectedFilter] = useState(filter);
+
+  const handleCheckboxChange = (e) => {
+    const selectedValue = e.target.value;
+    setSelectedFilter(selectedValue);
+    setFilter(selectedValue);
+  };
+
   return (
-    <div>
-      <label htmlFor="filter">Filter: </label>
-      <select id="filter" value={filter} onChange={(e) => setFilter(e.target.value)}>
-        <option value="all">All</option>
-        <option value="completed">Completed</option>
-        <option value="pending">Pending</option>
-      </select>
+    <div className='filter'>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="filter"
+            value="all"
+            checked={selectedFilter === 'all'}
+            onChange={handleCheckboxChange}
+          />
+          All
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="filter"
+            value="completed"
+            checked={selectedFilter === 'completed'}
+            onChange={handleCheckboxChange}
+          />
+          Completed
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="filter"
+            value="pending"
+            checked={selectedFilter === 'pending'}
+            onChange={handleCheckboxChange}
+          />
+          Pending
+        </label>
+      </div>
     </div>
   );
 }
