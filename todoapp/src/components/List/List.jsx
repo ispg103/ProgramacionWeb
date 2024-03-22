@@ -1,21 +1,26 @@
 import PropTypes from 'prop-types';
-import Button from '../Button/Button';
+import { useContexts } from "../../hooks/useContext";
+import useInput from '../../hooks/useInput';
 import Form from '../Form/Form';
 import Footer from '../Footer/Footer';
-import useInput from '../../hooks/useInput';
-import useTasks from '../../hooks/useTasks';
+import Button from '../Button/Button';
+import { TasksContext } from '../../context/TaskContext';
 
 export default function TodoList({ filter }) {
   const [inputValue, setInputValue, setInput] = useInput('');
-  const { tasks, addTask, deleteTask, clearAllTasks, toggleTaskCompletion } = useTasks([]);
+  const { tasks, addTask, deleteTask, toggleTaskCompletion } = useContexts(TasksContext);
 
   const handleAddTask = () => {
     addTask(inputValue);
     setInput('');
   };
 
-  const handleClearAllTasks = () => {
-    clearAllTasks();
+  const handleClearCompletedTasks = () => {
+    tasks.forEach(task => {
+      if (task.completed) {
+        deleteTask(task.id);
+      }
+    });
   };
 
   const hasTasks = tasks.length > 0;
@@ -35,17 +40,17 @@ export default function TodoList({ filter }) {
         <ul>
           {tasks
             .filter(task => filter === 'all' || (filter === 'completed' && task.completed) || (filter === 'pending' && !task.completed))
-            .map((task, index) => (
-              <li key={index}>
+            .map((task) => (
+              <li key={task.id}>
                 <input
                   type="checkbox"
                   checked={task.completed}
-                  onChange={() => toggleTaskCompletion(index)}
+                  onChange={() => toggleTaskCompletion(task.id)}
                 />
                 <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
-                  {task.text}
+                  {task.title}
                 </span>
-                <Button type="button" text="Delete" handleClickCounter={() => deleteTask(index)} />
+                <Button type="button" text="Delete" handleClick={() => deleteTask(task.id)} />
               </li>
             ))}
         </ul>
@@ -53,7 +58,7 @@ export default function TodoList({ filter }) {
         <NoTasksMsg />
       )}
       <div>
-        <Footer tasks={tasks} clearAllTasks={handleClearAllTasks} />
+        <Footer tasks={tasks} clearCompletedTasks={handleClearCompletedTasks} />
       </div>
     </div>
   );

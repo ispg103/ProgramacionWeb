@@ -47,10 +47,6 @@ button:hover {
   padding: 1rem;
 }
 
-.body{
-  padding-left: 8.5rem;
-}
-
 ul {
   list-style: none;
   display: flex;
@@ -65,7 +61,6 @@ li{
   margin-bottom: 2rem;
   align-items: center;
 }
-
 
 section{
   display: flex;

@@ -1,44 +1,26 @@
-import PropTypes from 'prop-types';
-import Button from '../Button/Button';
+import { useState } from 'react';
+import { useContexts } from '../../hooks/useContext';
 
-function Form({ inputValue, handleChange, handleAddTask }) {
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter' && inputValue.trim() !== '') {
-      event.preventDefault();
-      handleAddTask();
+export default function Form() {
+  const [taskTitle, setTaskTitle] = useState('');
+  const { addTask } = useContexts();
+
+  const handleInputChange = (e) => {
+    setTaskTitle(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (taskTitle.trim() !== '') {
+      addTask(taskTitle);
+      setTaskTitle('');
     }
   };
 
-  const isInputEmpty = inputValue.trim() === '';
-
   return (
-    <>
-      <section>
-        <form className="TodoForm">
-          <input
-            type="text"
-            className="todo-input"
-            placeholder="Enter your task"
-            value={inputValue}
-            onChange={handleChange}
-            onKeyPress={handleKeyPress}
-          />
-        </form>
-        <Button
-          type="button"
-          text="Add Task"
-          handleClickCounter={handleAddTask}
-          disabled={isInputEmpty}
-        />
-      </section>
-    </>
+    <form onSubmit={handleSubmit}>
+      <input type="text" value={taskTitle} onChange={handleInputChange} placeholder="Enter task" />
+      <button type="submit">Add Task</button>
+    </form>
   );
 }
-
-Form.propTypes = {
-  inputValue: PropTypes.string.isRequired,
-  handleChange: PropTypes.func.isRequired,
-  handleAddTask: PropTypes.func.isRequired,
-};
-
-export default Form;
