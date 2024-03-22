@@ -1,43 +1,33 @@
 import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
+import { useEffect, useReducer } from 'react';
 import { TasksContext } from './TaskContext';
+import { reducerTask } from '../reducer/tasksReducer';
+import { TASK_ACTIONS } from "../consts/taskActions";
+
 
 const initTasks = JSON.parse(window.localStorage.getItem("tasks")) ?? [];
 
 export const TasksProvider = ({ children }) => {
-  const [tasks, setTasks] = useState(initTasks);
-  const [filter, setFilter] = useState('all');
+  const [tasks, dispatch] = useReducer(reducerTask, initTasks); // Use reducer instead of useState
 
   useEffect(() => {
     window.localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
   const addTask = (taskTitle) => {
-    const newTask = {
-      id: crypto.randomUUID(),
-      title: taskTitle,
-      completed: false
-    };
-    setTasks(prevTasks => [...prevTasks, newTask]);
+    dispatch({ type: TASK_ACTIONS.CREATE_TASK, payload: taskTitle });
   };
 
   const deleteTask = (taskId) => {
-    setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));
+    dispatch({ type: TASK_ACTIONS.DELETE_TASK, payload: taskId });
   };
 
   const toggleTaskCompletion = (taskId) => {
-    setTasks(prevTasks =>
-      prevTasks.map(task => {
-        if (task.id === taskId) {
-          return { ...task, completed: !task.completed };
-        }
-        return task;
-      })
-    );
+    dispatch({ type: TASK_ACTIONS.TOGGLE_TASK, payload: taskId });
   };
 
   const clearCompletedTasks = () => {
-    setTasks(prevTasks => prevTasks.filter(task => !task.completed));
+    dispatch({ type: TASK_ACTIONS.CLEAR_COMPLETED_TASKS });
   };
 
   return (
@@ -47,8 +37,6 @@ export const TasksProvider = ({ children }) => {
       deleteTask,
       toggleTaskCompletion,
       clearCompletedTasks,
-      filter,
-      setFilter
     }}>
       {children}
     </TasksContext.Provider>
