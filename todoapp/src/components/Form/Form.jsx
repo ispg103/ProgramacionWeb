@@ -19,7 +19,7 @@ export default function Form() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" value={taskTitle} onChange={handleInputChange} placeholder="Enter task" />
+      <input className="todo-input" type="text" value={taskTitle} onChange={handleInputChange} placeholder="Enter task" />
       <button type="submit">Add Task</button>
     </form>
   );
