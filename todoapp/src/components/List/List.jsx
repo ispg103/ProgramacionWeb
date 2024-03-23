@@ -26,7 +26,7 @@ export default function TodoList({ filter }) {
   const hasTasks = tasks.length > 0;
 
   function NoTasksMsg() {
-    return <p>Sorry, there are not any tasks. But you can add some...</p>;
+    return <p>Sorry, there are not any tasks. Add some!!</p>;
   }
 
   return (
